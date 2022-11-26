@@ -2,7 +2,7 @@ package entity;
 
 
 
-    public class Connection //implements InterfaceEms
+    public class Connection
     {
 
         private int id;

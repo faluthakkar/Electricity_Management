@@ -1,8 +1,6 @@
 package presentation;
 
-import entity.Connection_Type;
 import entity.Consumer;
-import entity.Rate_Table;
 import service.ConsumerService;
 import service.ConsumerServiceImpl;
 
