@@ -5,7 +5,8 @@ public class Bill {
     private int connectionId;
     private int consumerId;
     private int connectionTypeId;
-    private String yearMonth;
+    private String year;
+    private String month;
     private int oldReading;
     private int newReading;
     private int billedUnits;
@@ -14,6 +15,19 @@ public class Bill {
     public Bill() {
         super();
         // TODO Auto-generated constructor stub
+    }
+
+    public Bill(int id, int connectionId, int consumerId, int connectionTypeId, String year, String month, int oldReading, int newReading, int billedUnits, double totalAmount) {
+        this.id = id;
+        this.connectionId = connectionId;
+        this.consumerId = consumerId;
+        this.connectionTypeId = connectionTypeId;
+        this.year = year;
+        this.month = month;
+        this.oldReading = oldReading;
+        this.newReading = newReading;
+        this.billedUnits = billedUnits;
+        this.totalAmount = totalAmount;
     }
 
     public int getId() {
@@ -48,12 +62,20 @@ public class Bill {
         this.connectionTypeId = connectionTypeId;
     }
 
-    public String getYearMonth() {
-        return yearMonth;
+    public String getYear() {
+        return year;
     }
 
-    public void setYearMonth(String yearMonth) {
-        this.yearMonth = yearMonth;
+    public void setYear(String year) {
+        this.year = year;
+    }
+
+    public String getMonth() {
+        return month;
+    }
+
+    public void setMonth(String month) {
+        this.month = month;
     }
 
     public int getOldReading() {
@@ -84,24 +106,6 @@ public class Bill {
         return totalAmount;
     }
 
-    public void setTotalAmount(double totalAmount) {
-        this.totalAmount = totalAmount;
-    }
-
-    public Bill(int id, int connectionId, int consumerId, int connectionTypeId,
-                String yearMonth, int oldReading, int newReading, int billedUnits, double totalAmount) {
-        super();
-        this.id = id;
-        this.connectionId = connectionId;
-        this.consumerId = consumerId;
-        this.connectionTypeId = connectionTypeId;
-        this.yearMonth = yearMonth;
-        this.oldReading = oldReading;
-        this.newReading = newReading;
-        this.billedUnits = billedUnits;
-        this.totalAmount = totalAmount;
-    }
-
     @Override
     public String toString() {
         return "Bill{" +
@@ -109,11 +113,16 @@ public class Bill {
                 ", connectionId=" + connectionId +
                 ", consumerId=" + consumerId +
                 ", connectionTypeId=" + connectionTypeId +
-                ", yearMonth='" + yearMonth + '\'' +
+                ", year='" + year + '\'' +
+                ", month='" + month + '\'' +
                 ", oldReading=" + oldReading +
                 ", newReading=" + newReading +
                 ", billedUnits=" + billedUnits +
                 ", totalAmount=" + totalAmount +
                 '}';
+    }
+
+    public void setTotalAmount(double totalAmount) {
+        this.totalAmount = totalAmount;
     }
 }
