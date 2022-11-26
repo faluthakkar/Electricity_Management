@@ -10,6 +10,13 @@ package entity;
         private int connectionTypeId;
         private int oldReading;
 
+        public int getConsumerId() {
+            return consumerId;
+        }
+
+        public void setConsumerId(int consumerId) {
+            this.consumerId = consumerId;
+        }
 
         public Connection() {
             super();
@@ -33,13 +40,7 @@ package entity;
             this.id = id;
         }
 
-        public int getConsumerId() {
-            return consumerId;
-        }
 
-        public void setConsumerId(int consumerId) {
-            this.consumerId = consumerId;
-        }
 
         public int getConnectionTypeId() {
             return connectionTypeId;

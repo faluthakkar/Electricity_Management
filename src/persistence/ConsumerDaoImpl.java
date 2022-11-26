@@ -52,11 +52,11 @@ public class ConsumerDaoImpl  implements ConsumerDao {
         try (Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/electrcity_management", "root",
                 "root123456##")) {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            pst = conn.prepareStatement("insert into consumer values(?,?,?,?,?)");
-            pst.setInt(1, consumer.getId());
-            pst.setString(2, consumer.getCname());
-            pst.setString(3, consumer.getCity());
-            pst.setString(4, consumer.getArea());
+            pst = conn.prepareStatement("insert into consumer(CName,City,Area) values(?,?,?)");
+
+            pst.setString(1, consumer.getCname());
+            pst.setString(2, consumer.getCity());
+            pst.setString(3, consumer.getArea());
             // pst.setString(5, consumer.getCon_Type());
             rows = pst.executeUpdate();
             return rows;
