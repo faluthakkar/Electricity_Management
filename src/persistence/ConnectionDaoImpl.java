@@ -9,11 +9,22 @@ import java.sql.SQLException;
 public class ConnectionDaoImpl implements ConnectionDao{
     @Override
     public void delete(int id) {
+        PreparedStatement pst;
+        try (java.sql.Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/electrcity_management", "root",
+                "root123456##")) {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            pst = conn.prepareStatement("delete from connection where id = ?");
+            pst.setInt(1,id);
+            int row= pst.executeUpdate();
+            System.out.println("Successfully deleted "+row);
 
 
+        } catch (SQLException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    @Override
+        @Override
     public void add(Connection connection) {
 
 
@@ -26,17 +37,15 @@ public class ConnectionDaoImpl implements ConnectionDao{
             pst.setInt(1,connection.getOldReading());
             pst.setInt(2,connection.getConnectionTypeId());
             pst.setInt(3,connection.getConsumerId());
-
-
-
-
+            int rows =pst.executeUpdate();
+            System.out.println("Successful insertion "+rows);
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
     }
 
         @Override
-    public void update(Connection connection) {
+    public void update() {
 
     }
 }
