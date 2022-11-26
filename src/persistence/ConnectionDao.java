@@ -7,5 +7,5 @@ public interface ConnectionDao  {
 
     public void add(Connection connection);
 
-    public void update(Connection connection);
+    public void updateOldReading(Connection connection);
 }
