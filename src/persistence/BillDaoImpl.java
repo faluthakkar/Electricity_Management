@@ -17,7 +17,7 @@ public class BillDaoImpl implements BillDao {
         try (Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/electrcity_management", "root",
                 "root123456##")) {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            pst = conn.prepareStatement("insert into bill values(?,?,?,?,?)");
+            pst = conn.prepareStatement("insert into bill values(?,?,?,?,?,?)");
 
 
 
