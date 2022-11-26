@@ -49,8 +49,7 @@ public class ConsumerDisImpl implements ConsumerDisplay{
                 newConsumer.setCity(s.nextLine());
                 System.out.println("Enter Consumer Area ");
                 newConsumer.setArea(s.nextLine());
-                System.out.println("Enter Consumer Connection-Type ");
-                newConsumer.setCon_Type(s.next());
+
 
 
                 if(consumerService.registerConsumer(newConsumer)>0)
@@ -65,7 +64,7 @@ public class ConsumerDisImpl implements ConsumerDisplay{
                 System.out.println("Enter the consumer Id for which you want to generate Bill");
                 c.setId(s.nextInt());
                 System.out.println("Enter the year");
-                newConsumer1.setYear(s.nextInt());
+                //.setYear(s.nextInt());
                 System.out.println();
                 r.setArea(s.next());
             case 4:
